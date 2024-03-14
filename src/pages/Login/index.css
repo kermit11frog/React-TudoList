@@ -1,0 +1,16 @@
+.login__img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.login__text {
+    text-align: center;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+.login__button {
+    display: block;
+    margin: 15px auto;
+}

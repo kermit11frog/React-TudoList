@@ -1,0 +1,15 @@
+.newtudo {
+    padding: 20px 0;
+}
+
+.newtudo .inputBox {
+    margin-bottom: 10px;
+}
+
+.createBtn {
+    background: green;
+}
+
+.cancelBtn {
+    background: red;
+}
