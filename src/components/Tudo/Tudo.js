@@ -1,5 +1,3 @@
-import "./Tudo.css";
-
 const Tudo = ({ tudoID, text, isPending, editTudo }) => {
   return (
     <div className="tudo">
@@ -9,8 +7,9 @@ const Tudo = ({ tudoID, text, isPending, editTudo }) => {
           text,
           isPending: !e.target.checked
         })
-      }}/>
-      <label htmlFor={`tudo${tudoID}`} className="align-items">
+      }} className="hidden peer/pending"/>
+      <label htmlFor={`tudo${tudoID}`} className="flex items-center w-full py-2 px-4 bg-white text-gray-600
+      my-4 rounded-xl peer-checked/pending:line-through peer-checked/pending:opacity-70 select-none">
         {text}
       </label>
     </div>

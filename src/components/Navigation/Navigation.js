@@ -1,18 +1,17 @@
 import { NavLink, Link } from "react-router-dom"
 import { FaPlus } from "react-icons/fa6"
 
-import "./Navigation.css"
-
 const Navigation = () => {
     return (
-        <div className="navigation">
-            <div className="container align-items jc-sb">
+        <div className="absolute bottom-0 left-0 w-full bg-white">
+            <div className="container flex items-center justify-between">
               <NavLink to="/" className={
-                ({isActive}) => `navLink ${isActive ? 'active':''}`
+                ({isActive}) => `font-semibold ${isActive ? 'text-black':'text-gray-400'}`
               }>Home</NavLink>
-              <Link to="/newtudo" className="navLink createTudo go-center"><FaPlus/></Link>
+              <Link to="/newtudo" className="flex items-center justify-center w-16 h-16 rounded-full
+              bg-purple-400 text-white -translate-y-1/2 text-2xl"><FaPlus/></Link>
               <NavLink to="/aboutme" className={
-                ({isActive}) => `navLink ${isActive ? 'active':''}`
+                ({isActive}) => `font-semibold ${isActive ? 'text-black':'text-gray-400'}`
               }>About Me</NavLink>
             </div>
         </div>

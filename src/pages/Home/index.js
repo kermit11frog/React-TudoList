@@ -3,8 +3,6 @@ import { context as TudosContext } from "../../contexts/Tudos"
 import Tudo from "../../components/Tudo/Tudo"
 import Navigation from "../../components/Navigation/Navigation"
 
-import "./index.css";
-
 const Home = () => {
   const name = localStorage.getItem("name")
   const {tudos, editTudo} = useContext(TudosContext)
@@ -17,22 +15,23 @@ const Home = () => {
   }
   return (
     <>
-      <header>
+      <header className="header">
         <div className="container">
-          <div className="home__head-message">
-            <h2 className="mb-10">Hey dear {name}</h2>
+          <div className="pt-5">
+            <h2 className="mb-1.5 text-xl font-semibold">Hey dear {name}</h2>
             <p>Your can create your tudos now</p>
           </div>
-          <div className="home__head-box align-items jc-sb">
-            <div className="go-center">
+          <div className="flex items-center justify-between bg-white 
+          rounded-lg text-black translate-y-1/2">
+            <div className="flex items-center justify-center flex-col grow py-3">
               <h3>All</h3>
               <span>{getTudosCounter().all}</span>
             </div>
-            <div className="go-center">
+            <div className="flex items-center justify-center flex-col grow py-3">
               <h3>Pending</h3>
               <span>{getTudosCounter().pending}</span>
             </div>
-            <div className="go-center">
+            <div className="flex items-center justify-center flex-col grow py-3">
               <h3>Done</h3>
               <span>{getTudosCounter().done}</span>
             </div>
@@ -40,7 +39,7 @@ const Home = () => {
         </div>
       </header>
       <main>
-        <div className="tudoList">
+        <div className="py-12">
           <div className="container">
             {
               tudos.map(tudo => <Tudo {...tudo} key={tudo.tudoID} editTudo={editTudo}/>)

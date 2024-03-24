@@ -1,7 +1,4 @@
 import { Form, redirect, Navigate } from "react-router-dom";
-import { FaUser } from "react-icons/fa6";
-
-import "./index.css";
 
 const loginAction = async ({ request }) => {
   const data = await request.formData()
@@ -15,28 +12,17 @@ const Login = () => {
     <Navigate to="/" />
   ) : (
     <>
-      <header className="login__header">
-        <div className="container">
-          <img src="img/signin.svg" alt="welcome" className="login__img" />
+      <header className="header">
+        <div className="container p-5">
+          <img src="img/signin.svg" alt="welcome" className="object-contain w-full h-44" />
         </div>
       </header>
       <main>
         <div className="container">
           <Form method="POST" action="/login">
-            <h2 className="login__text">Pick Your Name</h2>
-            <div className="inputBox">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required={true}
-                maxLength="12"
-              />
-              <label htmlFor="name" className="align-items">
-                <FaUser /> My Name Is
-              </label>
-            </div>
-            <button className="btn login__button">Sign In</button>
+            <h2 className="font-bold text-2xl my-3 text-center uppercase">Pick Your Name</h2>
+            <input type="text" placeholder="your name" class="input" required={true} name="name"/>
+            <button className="block w-32 py-2 bg-emerald-500 text-white rounded-xl mx-auto mt-3">Sign In</button>
           </Form>
         </div>
       </main>
